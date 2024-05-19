@@ -1,0 +1,4532 @@
+[main]
+quote_asset = "USDT"
+total_allocated_capital = -1
+series_capacity = 5000
+trade_window_size = 30
+
+[exchange]
+rest_endpoint = "https://api.binance.com"
+websocket_endpoint = "wss://stream.binance.com:9443/ws"
+key = ""
+secret = ""
+restricted_key = ""
+restricted_secret = ""
+
+[database]
+hostname = "localhost"
+username = "postgres"
+password = ""
+database = "babylon_playground"
+port = 5432
+
+[rpc]
+stream_websocket_address = "127.0.0.1:3031"
+rpc_http_address = "127.0.0.1:3032"
+rpc_websocket_address = "127.0.0.1:3033"
+max_websocket_connections = 100
+max_subscriptions_per_connection = 10
+require_authentication = false
+
+[logging]
+level = "debug"
+
+[defaults]
+timeframes = ["1m", "5m", "30m", "2h", "6h", "1d", "1w", "1M"]
+recent_candles_only = true
+initial_number_of_candles = 121393
+trade_timeframe = "1m"
+periods = [3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269]
+entry_cooldown_ms = 3000
+exit_cooldown_ms = 3000
+max_quote_allocated = 1000.0
+max_orders = 1
+max_orders_per_trade = 1
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+retry_delay_ms = 300
+entry_grid_orders = 5
+exit_grid_orders = 5
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+min_order_spacing_ratio = 0.02
+initial_stop_ratio = 0.05
+stop_limit_offset_ratio = 0.0015
+initial_trailing_step_ratio = 0.05
+trailing_step_ratio = 0.02
+trailing_use_volatility = true
+baseline_risk_ratio = 0.02
+is_zero_maker_fee = false
+is_zero_taker_fee = false
+is_iceberg_trading_enabled = true
+is_long_trading_enabled = false
+is_short_trading_enabled = false
+
+# 121393
+[[default_timeframe_configs]]
+timeframe = "1s"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "1m"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "3m"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "5m"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "15m"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "30m"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "1h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "2h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "4h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "6h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "8h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "12h"
+initial_number_of_candles = 121393
+
+[[default_timeframe_configs]]
+timeframe = "1d"
+initial_number_of_candles = 121393
+
+[[coins]]
+name = "BTCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SOLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BNBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XRPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DOGEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ADAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SHIBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AVAXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DOTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TRXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LINKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NEARUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MATICUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ICPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LTCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DAIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "UNIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "APTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ETCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RNDRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FILUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ATOMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XLMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TAOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IMXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HBARUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VETUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WIFUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GRTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PEPEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MKRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "INJUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "THETAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FTMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FETUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TIAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RUNEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LDOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SEIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SUIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FLOKIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BEAMXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JUPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALGOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PENDLEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GALAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ENAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FLOWUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AAVEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NEOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BONKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "QNTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BTTCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AGIXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "EGLDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AXSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SANDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XECUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RONINUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WLDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CHZUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PYTHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XTZUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JASMYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ORDIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SNXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GNOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CFXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STRKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MINAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "EOSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MANAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CKBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "APEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KAVAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AXLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IOTAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CAKEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KLAYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "1000SATSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NEXOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ROSEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TFUELUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BLURUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DYDXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ASTRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LUNCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OSMOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DYMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IOTXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WOOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BOMEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OCEANUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CRVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SKLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ANKRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SUPERUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FTTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "1INCHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MANTAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DEXEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TWTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GMTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ENSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ENJUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GALUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "COMPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LUNAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ZRXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RPLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ETHFIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CELOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RAYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RVNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ZILUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARKMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HOTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "QTUMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JTOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SSVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GLMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ELFUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PAXGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ONTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FXSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BICOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "POLYXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BATUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ILVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ZECUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GASUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "METISUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LRCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SAGAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PIXELUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DASHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SFPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DCRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XEMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MEMEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MASKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "YGGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FLUXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RSRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AMPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ONEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JSTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WAVESUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GLMRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GMXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VTHOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KSMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ONGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BNXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ACHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CHRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CVXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KDAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OMNIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WAXPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "YFIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ICXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SUSHIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LSKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AUDIOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NTRNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STORJUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BANDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "UMAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BALUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DGBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SXPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "C98USDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "API3USDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MAGICUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RIFUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RLCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CELRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XAIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PONDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "COTIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IOSTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VANRYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PROMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SYNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JOEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AEVOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PUNDIXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SYSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "EDUUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SLPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PORTALUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CYBERUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STRAXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IQUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CVCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XVSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NMRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CTSIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HIVEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DUSKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XNOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BLZUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "POWRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SNTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PHAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TRUUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TRBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DENTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TNSRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HOOKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PYRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HIGHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ZENUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SUNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PEOPLEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "REQUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ACEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STEEMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SCRTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HFTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MOVRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NFPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AUCTIONUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KNCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DODOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GNSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STPTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALPHAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MBOXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MTLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MAVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OXTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARDRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ERNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RDNTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GHSTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HIFIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LOOMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CTKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LQTYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SPELLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "XVGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NKNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OMGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BNTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "REIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARPAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RADUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DARUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WRXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PHBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OGNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RAREUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "QKCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALICEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ATAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CREAMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LTOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BADGERUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "QIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LEVERUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MBLUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GTCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WNXMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "POLSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TKOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "STMXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FRONTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BAKEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CTXCUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VICUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PERPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TLMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "NULSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "COSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CLVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FORTHUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DATAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "RENUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AERGOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BELUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FUNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MLNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALCXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BETAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FARMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FLMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MDXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KMDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WANUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "MDTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DIAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ORNUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LINAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IDEXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "REEFUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "COMBOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IRISUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PDAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DEGOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "UTKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VOXELUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LOKAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LITUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FIDAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "QUICKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KEYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PSGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BSWUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "KP3RUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FISUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AVAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ARKOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "SANTOSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "UNFIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CHESSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PIVXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "UFTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BIFIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BARUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ADXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALPACAUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VITEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FIOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VIDTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DOCKUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "HARDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BURGERUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "AMBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "WINGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ASTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "LAZIOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CITYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BONDUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FIROUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OGUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "TROYUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ALPINEUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "DFUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VIBUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PORTOUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "GFTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OAXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "FORUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "JUVUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "VGXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "EPXUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ATMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ACMUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "CVPUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "BIDRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "PROSUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "IDRTUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "OOKIUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+
+[[coins]]
+name = "ASRUSDT"
+is_enabled = true
+is_favorite = false
+timeframes = ["15m", "1h", "4h", "1d"]
+min_quote_per_grid = 200.0
+max_quote_per_grid = 1000.0
+max_orders = 5
+max_orders_per_cooldown = 1
+max_retry_attempts = 1
+order_cooldown = 2500
+

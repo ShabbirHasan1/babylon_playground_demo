@@ -1,0 +1,100 @@
+[package]
+name = "babylon_playground_demo"
+default-run = "babylon_playground_demo"
+version = "0.6.1"
+authors = ["Andrejs Gubarevs <my_spare_inbox@proton.me>"]
+edition = "2021"
+
+[[bin]]
+name = "babylon_playground_demo"
+path = "src/main.rs"
+
+[dependencies]
+config = "0.13.3"
+serde = { version = "1", features = ["derive"] }
+serde_derive = "1"
+serde_json = { version = "1", features = ["arbitrary_precision", "indexmap"] }
+serde_with = { version = "3.5.1", features = ["chrono", "indexmap"] }
+#binance = { path = "../binance-rs", features = ["vendored-tls"] }
+dotenvy = "0.15.7"
+log = "0.4"
+env_logger = "0.11.1"
+thiserror = "1.0.44"
+anyhow = "1"
+rand = "0.8.5"
+chrono = { version = "0.4.33", features = ["serde"] }
+yata = { path = "../yata", features = ["unsafe_performance", "period_type_u32"] }
+num = "0.4.1"
+num-derive = "0.4.0"
+num-traits = "0.2.16"
+itertools = "0.12.1"
+ordered-float = { version = "3.7.0", features = ["serde"] }
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7.8", features = ["codec", "compat"] }
+rayon = "1.7.0"
+threadpool = "1.8.1"
+postgres = { version = "0.19.7", features = ["with-chrono-0_4"] }
+ratelimit_meter = "5.0.0"
+nonzero_ext = "0.3.0"
+speedometer = "0.2.2"
+running-average = "0.1.0"
+num_cpus = "1.15.0"
+metrics = "0.22.0"
+bitflags = "2.1.0"
+parking_lot = "0.12.1"
+egui = { path = "../egui/crates/egui", version = "0.21.0", features = ["color-hex"] }
+egui_extras = { path = "../egui/crates/egui_extras", version = "0.21.0" }
+eframe = { path = "../egui/crates/eframe", version = "0.21.3", features = ["persistence"] }
+winit = "0.28.1"
+fast-float = "0.2.0"
+ryu = "1.0.15"
+nohash-hasher = "0.2.0"
+indexmap = "2.0.0"
+intmap = "2.0.0"
+crossbeam = "0.8.2"
+crossbeam-channel = "0.5.8"
+pausable_clock = "1.0.1"
+clap = { version = "4.3.19", features = ["derive"] }
+zeroize = { version = "1.6.0", features = ["derive", "serde"] }
+reqwest = { version = "0.11.18", features = ["json"] }
+zip = "0.6.6"
+tar = "0.4.39"
+csv = "1.2.2"
+dashmap = "5.5.0"
+uuid = { version = "1.3.3", features = ["v4", "fast-rng"] }
+ndarray = "0.15.6"
+ndarray-stats = "0.5.1"
+rand_distr = "0.4.3"
+portable-atomic = { version = "1", features = ["float"] }
+ustr = { version = "0.9.0", features = ["serde", "serialization"] }
+croaring = "1.0.1"
+murmur3 = "0.5.2"
+itoa = "1.0.9"
+humantime = "2.1.0"
+dyn-clonable = "0.9.0"
+statrs = "0.16.0"
+arrayvec = { version = "0.7.4", features = ["default"] }
+smallvec = { version = "1.11.2", features = ["const_generics"] }
+derivative = "2.2.0"
+strum = "0.26.1"
+strum_macros = "0.26.1"
+toml = "0.8.8"
+binance_spot_connector_rust = { path = "../binance-spot-connector-rust", version = "1.1.0", features = ["enable-hyper", "enable-tokio-tungstenite"] }
+futures-util = "0.3.28"
+http = "1.1.0"
+rust_decimal = "1.35.0"
+
+[dev-dependencies]
+expect-test = "1.4.1"
+
+[target.'cfg(target_arch = "x86")'.dependencies]
+atoi_simd = "0.15.6"
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+tikv-jemallocator = "0.5"
+
+[target.'cfg(target_env = "msvc")'.dependencies]
+mimalloc = "0.1.37"
+
+[profile.release]
+opt-level = 3
